@@ -16,26 +16,6 @@ public class MathUtils {
 
     public static boolean isShapeConvex(List<Point> points){
         Vector<Point> hull = ConvexHull.convexHull(points, points.size());
-       /* for (int i = 0; i < hull.size() ; i++) {
-            int prevI = i==0 ? hull.size()-1 : i-1;
-            int nextI = i == hull.size()-1 ? 0 : i+1;
-
-            Point v1 = new Point((hull.get(i).getX() - hull.get(prevI).getX()),(hull.get(i).getY() - hull.get(prevI).getY()));
-            Point v2 = new Point((hull.get(nextI).getX() - hull.get(i).getX()),(hull.get(nextI).getY() - hull.get(i).getY()));
-
-            angleMap.put(hull.get(i),vectorAngle(v1,v2));
-        }
-
-        boolean isConvex = true;
-
-
-        for (Point p : angleMap.keySet()) {
-            System.out.println(p.getX()+" | "+p.getY()+"=> "+angleMap.get(p));
-            if (angleMap.get(p) > 180) {
-                isConvex = false;
-            }
-        }
-        return isConvex;*/
         for (Point p : hull) {
             System.out.println(p.getX()+" | "+p.getY());
 
